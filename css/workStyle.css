@@ -94,6 +94,7 @@
   grid-template-rows: 1fr;
   grid-gap: 100px;
   align-items: center;
+  justify-content: center;
 }
 .work-img-container {
   display: flex;
