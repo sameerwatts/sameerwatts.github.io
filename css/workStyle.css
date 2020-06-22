@@ -1,0 +1,121 @@
+.work {
+  position: relative;
+}
+
+.work-detail {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  background-color: var(--white);
+  padding: 30px;
+  width: 95%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.hide-popup {
+  border: none;
+  background-color: var(--white);
+  color: var(--lighterGray);
+  height: 0;
+  line-height: 0;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+.hide-popup:hover {
+  color: var(--black);
+}
+.hide-popup:focus {
+  outline: none;
+}
+
+.work-detail.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.work-detail-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc {
+  display: grid;
+  grid-template-columns: 4fr 1fr 2fr;
+  grid-template-areas: "work-desc work-desc work-desc" "horizontal-separator horizontal-separator horizontal-separator" "team team team";
+}
+
+.work-desc {
+  grid-area: work-desc;
+}
+.vertical-separator {
+  border-left: 1px solid var(--lighterGray);
+  height: 100%;
+  margin: 0 auto;
+  grid-area: vartical-separator;
+  display: none;
+}
+.horizontal-separator {
+  border-bottom: 1px solid var(--lighterGray);
+  width: 100%;
+  display: block;
+  grid-area: horizontal-separator;
+  margin: 30px 0;
+}
+.team {
+  color: var(--lightGray);
+  grid-area: team;
+  text-align: center;
+}
+.work-detail-heading span {
+  color: var(--lighterGray);
+}
+.work-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.work-overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.workList-grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 130px);
+  grid-template-rows: 1fr;
+  grid-gap: 100px;
+  align-items: center;
+}
+.work-img-container {
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+  cursor: pointer;
+}
+.work-img-container img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 767px) {
+  .vertical-separator {
+    display: block;
+  }
+  .horizontal-separator {
+    display: none;
+  }
+  .desc {
+    grid-template-areas: "work-desc vartical-separator team";
+  }
+  .work-detail {
+    width: 730px;
+  }
+}

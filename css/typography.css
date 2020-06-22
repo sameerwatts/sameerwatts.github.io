@@ -1,0 +1,373 @@
+/*---------------- Font Weights ---------------------*/
+.fw-lighter {
+  font-weight: lighter !important;
+}
+.fw-normal {
+  font-weight: normal !important;
+}
+.fw-bold {
+  font-weight: bold !important;
+}
+.fw-bolder {
+  font-weight: bolder !important;
+}
+.fw-100 {
+  font-weight: 100 !important;
+}
+.fw-200 {
+  font-weight: 200 !important;
+}
+.fw-300 {
+  font-weight: 300 !important;
+}
+.fw-400 {
+  font-weight: 400 !important;
+}
+.fw-500 {
+  font-weight: 500 !important;
+}
+.fw-600 {
+  font-weight: 600 !important;
+}
+.fw-700 {
+  font-weight: 700 !important;
+}
+.fw-800 {
+  font-weight: 800 !important;
+}
+.fw-900 {
+  font-weight: 900 !important;
+}
+/*---------------- Font Weights ---------------------*/
+/*---------------- Font Sizes ---------------------*/
+.fs-10 {
+  font-size: 0.625rem !important;
+}
+.fs-12 {
+  font-size: 0.75rem !important;
+}
+
+.fs-14 {
+  font-size: 0.875rem !important;
+}
+
+.fs-16 {
+  font-size: 1rem !important;
+}
+
+.fs-18 {
+  font-size: 1.125rem !important;
+}
+.fs-20 {
+  font-size: 1.25rem !important;
+}
+
+.fs-22 {
+  font-size: 1.375rem !important;
+}
+
+.fs-24 {
+  font-size: 1.5rem !important;
+}
+
+.fs-26 {
+  font-size: 1.625rem !important;
+}
+
+.fs-28 {
+  font-size: 1.75rem !important;
+}
+
+.fs-30 {
+  font-size: 1.875rem !important;
+}
+
+.fs-32 {
+  font-size: 2rem !important;
+}
+.fs-34 {
+  font-size: 2.125rem !important;
+}
+.fs-36 {
+  font-size: 2.25rem !important;
+}
+.fs-38 {
+  font-size: 2.375rem !important;
+}
+.fs-40 {
+  font-size: 2.5rem !important;
+}
+.fs-42 {
+  font-size: 2.625rem !important;
+}
+.fs-44 {
+  font-size: 2.75rem !important;
+}
+.fs-46 {
+  font-size: 2.875rem !important;
+}
+.fs-48 {
+  font-size: 3rem !important;
+}
+.fs-50 {
+  font-size: 3.125rem !important;
+}
+.fs-52 {
+  font-size: 3.25rem !important;
+}
+.fs-54 {
+  font-size: 3.375rem !important;
+}
+/*---------------- Font Sizes ---------------------*/
+/*---------------- Line Height ---------------------*/
+.lh-n {
+  line-height: normal;
+}
+.lh-1 {
+  line-height: 1;
+}
+.lh-1-27 {
+  line-height: 1.27;
+}
+
+.lh-1-33 {
+  line-height: 1.33;
+}
+.lh-1-5 {
+  line-height: 1.5;
+}
+.lh-1-67 {
+  line-height: 1.67;
+}
+.lh-1-7 {
+  line-height: 1.7;
+}
+
+.lh-1-86 {
+  line-height: 1.86;
+}
+
+.lh-1-9 {
+  line-height: 1.9;
+}
+
+.lh-2 {
+  line-height: 2;
+}
+/*---------------- Line Height ---------------------*/
+/*---------------- Letter Spacing ---------------------*/
+.ls-0-5 {
+  letter-spacing: 0.5px;
+}
+.ls-1 {
+  letter-spacing: 1px;
+}
+
+.ls-1-6 {
+  letter-spacing: 1.6px;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+/*---------------- Letter Spacing ---------------------*/
+@media only screen and (min-width: 768px) {
+  /*---------------- Font Sizes ---------------------*/
+  .fs-md-10 {
+    font-size: 0.625rem !important;
+  }
+  .fs-md-12 {
+    font-size: 0.75rem !important;
+  }
+
+  .fs-md-14 {
+    font-size: 0.875rem !important;
+  }
+
+  .fs-md-16 {
+    font-size: 1rem !important;
+  }
+
+  .fs-md-18 {
+    font-size: 1.125rem !important;
+  }
+  .fs-md-20 {
+    font-size: 1.25rem !important;
+  }
+
+  .fs-md-22 {
+    font-size: 1.375rem !important;
+  }
+
+  .fs-md-24 {
+    font-size: 1.5rem !important;
+  }
+
+  .fs-md-26 {
+    font-size: 1.625rem !important;
+  }
+
+  .fs-md-28 {
+    font-size: 1.75rem !important;
+  }
+
+  .fs-md-30 {
+    font-size: 1.875rem !important;
+  }
+
+  .fs-md-32 {
+    font-size: 2rem !important;
+  }
+  .fs-md-34 {
+    font-size: 2.125rem !important;
+  }
+  .fs-md-36 {
+    font-size: 2.25rem !important;
+  }
+  .fs-md-38 {
+    font-size: 2.375rem !important;
+  }
+  .fs-md-40 {
+    font-size: 2.5rem !important;
+  }
+  .fs-md-42 {
+    font-size: 2.625rem !important;
+  }
+  .fs-md-44 {
+    font-size: 2.75rem !important;
+  }
+  .fs-md-46 {
+    font-size: 2.875rem !important;
+  }
+  .fs-md-48 {
+    font-size: 3rem !important;
+  }
+  .fs-md-50 {
+    font-size: 3.125rem !important;
+  }
+  .fs-md-52 {
+    font-size: 3.25rem !important;
+  }
+  .fs-md-54 {
+    font-size: 3.375rem !important;
+  }
+
+  /*---------------- Font Sizes ---------------------*/
+  /*---------------- Line Height ---------------------*/
+  .lh-md-1-27 {
+    line-height: 1.27;
+  }
+  .lh-md-1-64 {
+    line-height: 1.64;
+  }
+  .lh-md-1-71 {
+    line-height: 1.71;
+  }
+  .lh-md-1-86 {
+    line-height: 1.86;
+  }
+  /*---------------- Line Height ---------------------*/
+}
+
+@media only screen and (min-width: 1024px) {
+  /*---------------- Font Sizes ---------------------*/
+  .fs-lg-10 {
+    font-size: 0.625rem !important;
+  }
+  .fs-lg-12 {
+    font-size: 0.75rem !important;
+  }
+
+  .fs-lg-14 {
+    font-size: 0.875rem !important;
+  }
+
+  .fs-lg-16 {
+    font-size: 1rem !important;
+  }
+
+  .fs-lg-18 {
+    font-size: 1.125rem !important;
+  }
+  .fs-lg-20 {
+    font-size: 1.25rem !important;
+  }
+
+  .fs-lg-22 {
+    font-size: 1.375rem !important;
+  }
+
+  .fs-lg-24 {
+    font-size: 1.5rem !important;
+  }
+
+  .fs-lg-26 {
+    font-size: 1.625rem !important;
+  }
+
+  .fs-lg-28 {
+    font-size: 1.75rem !important;
+  }
+
+  .fs-lg-30 {
+    font-size: 1.875rem !important;
+  }
+
+  .fs-lg-32 {
+    font-size: 2rem !important;
+  }
+  .fs-lg-34 {
+    font-size: 2.125rem !important;
+  }
+  .fs-lg-36 {
+    font-size: 2.25rem !important;
+  }
+  .fs-lg-38 {
+    font-size: 2.375rem !important;
+  }
+  .fs-lg-40 {
+    font-size: 2.5rem !important;
+  }
+  .fs-lg-42 {
+    font-size: 2.625rem !important;
+  }
+  .fs-lg-44 {
+    font-size: 2.75rem !important;
+  }
+  .fs-lg-46 {
+    font-size: 2.875rem !important;
+  }
+  .fs-lg-48 {
+    font-size: 3rem !important;
+  }
+  .fs-lg-50 {
+    font-size: 3.125rem !important;
+  }
+  .fs-lg-52 {
+    font-size: 3.25rem !important;
+  }
+  .fs-lg-54 {
+    font-size: 3.375rem !important;
+  }
+  .fs-lg-70 {
+    font-size: 4.375rem !important;
+  }
+  /*---------------- Font Sizes ---------------------*/
+  /*---------------- Line Height ---------------------*/
+
+  .lh-lg-2 {
+    line-height: 2;
+  }
+  /*---------------- Line Height ---------------------*/
+}
+
+@media only screen and (min-width: 1200px) {
+  /*---------------- Line Height ---------------------*/
+  .lh-xl-1-27 {
+    line-height: 1.27;
+  }
+  .lh-xl-1-86 {
+    line-height: 1.86;
+  }
+  /*---------------- Line Height ---------------------*/
+}

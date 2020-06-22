@@ -1,0 +1,65 @@
+.bg-color-sky-light {
+  background-color: var(--backgroundColor);
+}
+.serviceList {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.service {
+  padding: 30px;
+  position: relative;
+  background-color: var(--white);
+}
+.service .service-element,
+.service .service-info {
+  transform: translate(0px, 0px);
+  transition: all 0.3s ease-in-out;
+}
+.service:hover .service-info,
+.service:hover .service-element {
+  transform: translate(0px, -30px);
+}
+.service .service-element {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.service:hover .service-element {
+  opacity: 0;
+}
+.service-icon {
+  display: block;
+}
+.icon-chemistry::before {
+  content: "\2668";
+  color: var(--lightGray);
+  font-size: 30px;
+}
+.bg-cyanLight {
+  background-color: var(--cyanLight);
+}
+.white,
+.white::before {
+  color: var(--white);
+}
+.content-wrapper-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.company-logo {
+  width: 30px;
+}
+.company-logo img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .serviceList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
