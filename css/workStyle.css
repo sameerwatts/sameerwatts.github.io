@@ -105,6 +105,9 @@
 .work-img-container img {
   width: 100%;
 }
+.work-img-container.D2DImg img {
+  width: 50%;
+}
 
 @media only screen and (min-width: 767px) {
   .vertical-separator {
