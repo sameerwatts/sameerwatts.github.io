@@ -4,6 +4,11 @@
 .serviceList {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas:
+    "PS"
+    "Nickelfox"
+    "D2D"
+    "Freelance";
 }
 .service {
   padding: 30px;
@@ -31,8 +36,8 @@
 }
 .icon-chemistry::before {
   content: "\2668";
-  color: var(--lightGray);
-  font-size: 30px;
+  color: var(--black);
+  font-size: 40px;
 }
 .bg-cyanLight {
   background-color: var(--cyanLight);
@@ -54,12 +59,33 @@
 .company-logo {
   width: 30px;
 }
+.company-logo.sapient-logo {
+  width: 70px;
+}
+.company-logo.d2d-logo {
+  width: 50px;
+}
+
 .company-logo img {
   width: 100%;
 }
-
+.freelancing-service {
+  grid-area: Freelance;
+}
+.publicis-sapient-service {
+  grid-area: PS;
+}
+.nickelfox-service {
+  grid-area: Nickelfox;
+}
+.freelancing-service {
+  grid-area: Freelance;
+}
 @media only screen and (min-width: 1024px) {
   .serviceList {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "PS Nickelfox"
+      "Freelance D2D";
   }
 }
