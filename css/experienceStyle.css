@@ -2,13 +2,21 @@
   background-color: var(--backgroundColor);
 }
 .serviceList {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "PS"
-    "Nickelfox"
-    "D2D"
-    "Freelance";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.serviceList > * {
+  width: 100%;
+}
+.serviceList .nickelfox-service {
+  order: 2
+}
+.serviceList .freelance-service {
+  order: 1
+}
+.serviceList .d2d-service {
+  order: 3
 }
 .service {
   padding: 30px;
@@ -62,6 +70,9 @@
 .company-logo.sapient-logo {
   width: 70px;
 }
+.company-logo.rebel-logo {
+  width: 100px;
+}
 .company-logo.d2d-logo {
   width: 50px;
 }
@@ -69,23 +80,10 @@
 .company-logo img {
   width: 100%;
 }
-.freelancing-service {
-  grid-area: Freelance;
-}
-.publicis-sapient-service {
-  grid-area: PS;
-}
-.nickelfox-service {
-  grid-area: Nickelfox;
-}
-.freelancing-service {
-  grid-area: Freelance;
-}
 @media only screen and (min-width: 1024px) {
-  .serviceList {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "PS Nickelfox"
-      "Freelance D2D";
+  .serviceList > * {
+    width: 50%;
+    order: 999 !important;
   }
+  
 }
