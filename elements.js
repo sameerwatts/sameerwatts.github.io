@@ -1,0 +1,14 @@
+export const menuToggle = document.querySelector(".menu-toggle");
+export const nav = document.querySelector(".nav");
+export const navWrapper = document.querySelector(".nav-wrapper");
+export const logo = document.querySelector(".logo");
+export const navHeight = navWrapper.offsetHeight;
+export const progressBar = document.querySelectorAll(".progress-bar");
+export const workTriggers = Array.from(document.querySelectorAll(".work-trigger"));
+export const hideButtons = Array.from(document.querySelectorAll(".hide-popup"));
+export const lastName = document.querySelector(".header-text-last");
+export const headerText = document.querySelector(".header");
+export const gradientBar = document.querySelector(".grad-bar");
+export const navLinks = nav.querySelectorAll("a");
+export const sections = document.querySelectorAll("section");
+export const overlay = document.querySelector(".overlay");
