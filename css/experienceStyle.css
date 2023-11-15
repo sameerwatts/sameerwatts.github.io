@@ -67,6 +67,9 @@
 .company-logo {
   width: 30px;
 }
+.company-logo.arintra-logo {
+  width: 150px;
+}
 .company-logo.sapient-logo {
   width: 70px;
 }
