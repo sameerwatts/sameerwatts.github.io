@@ -118,8 +118,8 @@ src/
 
 | Vanilla today | React equivalent |
 |---------------|------------------|
-| `menuToggle` click toggles `mobile-nav` / `is-active` | `const [mobileOpen, setMobileOpen] = useState(false)` in `Navbar`; classNames derived from it |
-| nav link sets `active` attribute | `const [activeLink, setActiveLink] = useState('home')`; render `active` conditionally |
+| `menuToggle` click toggles `mobile-nav` / `is-active` | `const [mobileOpen, setMobileOpen] = useState(false)` in `Navbar`; `mobile-nav` on the `<ul class="nav">` **and** `is-active` on the `#mobile-menu` toggle both derive from it |
+| nav link sets `active` attribute **and** closes the mobile menu | `const [activeLink, setActiveLink] = useState('home')`; the click handler renders `active` conditionally **and** calls `setMobileOpen(false)` (mirrors `navLinkClickHandler`, which removes both `mobile-nav` and `is-active`) |
 | `scrollEventsHandler` → `.nav-wrapper.active` + `.logo.showLogo` | `useStickyNav()` hook: `useEffect` adds a scroll listener, returns `{ sticky, showLogo }` booleans |
 | `scrollIndicator()` sets `.grad-bar` width | `useScrollProgress()` hook returns a `0–100` number → inline `style={{ width: `${p}%` }}` |
 | `scrollAnimation()` grows `.progress-bar` | `useInView()` (IntersectionObserver) per `ProgressBox`; when in view, set width to `percent` |
@@ -226,6 +226,35 @@ Do this incrementally; the site should render after every phase.
   render it as `active=""` conditionally, or (cleaner) switch to a CSS class.
 - **Do not introduce Redux** — it is listed as a skill on the page but is not
   warranted by the app's actual state.
+
+### Mobile view — behaviours that depend on more than class names
+
+The plan's rule "match the exact **class names**" is not enough for mobile: the
+whole responsive layout is CSS-media-query-driven (`max-width: 992px` /
+`1200px` in `navbarStyle.css`), and three mobile behaviours key off an **id**,
+**DOM structure**, or a **meta tag** — not classes. Preserve all of these or the
+mobile view regresses even though desktop looks fine:
+
+- **Hamburger animation depends on `id="mobile-menu"`, not a class.** The X-morph
+  selectors are `#mobile-menu.is-active .bar:nth-child(n)` in `navbarStyle.css`.
+  The `<Navbar>` toggle element **must** keep `id="mobile-menu"`. Drop or rename
+  it and the menu still opens/closes but the three bars won't animate into an X.
+- **The hamburger needs exactly three sibling `.bar` elements, in order.** The
+  animation uses `.bar:nth-child(1/2/3)`. Render three `.bar` divs as direct,
+  in-order children of `.menu-toggle` — do **not** map them from an array or wrap
+  them, or `nth-child` breaks.
+- **Preserve the viewport meta tag.** Mobile scaling depends on
+  `<meta name="viewport" content="width=device-width, initial-scale=1" />` from
+  the old `index.html`. Phase 2 deletes that file — make sure the Vite
+  `index.html` template still carries this tag (Vite's default template includes
+  one, but confirm it survived).
+- **`100vh` quirk (pre-existing, preserved):** the open mobile menu uses
+  `height: calc(100vh - 55px)`, which is subject to the mobile-browser-chrome
+  `100vh` bug. Reusing the CSS as-is keeps the current behaviour; the migration
+  is a good moment to switch to `100dvh` if you want to fix it.
+- **No body-scroll-lock (pre-existing, preserved):** the page scrolls behind the
+  open mobile menu today. React reuses the CSS as-is, so this is unchanged unless
+  you deliberately add a scroll lock tied to `mobileOpen`.
 
 ---
 
