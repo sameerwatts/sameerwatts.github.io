@@ -1,0 +1,92 @@
+.bg-color-sky-light {
+  background-color: var(--backgroundColor);
+}
+.serviceList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.serviceList > * {
+  width: 100%;
+}
+.serviceList .nickelfox-service {
+  order: 2
+}
+.serviceList .freelance-service {
+  order: 1
+}
+.serviceList .d2d-service {
+  order: 3
+}
+.service {
+  padding: 30px;
+  position: relative;
+  background-color: var(--white);
+}
+.service .service-element,
+.service .service-info {
+  transform: translate(0px, 0px);
+  transition: all 0.3s ease-in-out;
+}
+.service:hover .service-info,
+.service:hover .service-element {
+  transform: translate(0px, -30px);
+}
+.service .service-element {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.service:hover .service-element {
+  opacity: 0;
+}
+.service-icon {
+  display: block;
+}
+.icon-chemistry::before {
+  content: "\2668";
+  color: var(--black);
+  font-size: 40px;
+}
+.bg-cyanLight {
+  background-color: var(--cyanLight);
+}
+.white,
+.white::before {
+  color: var(--white);
+}
+.content-wrapper-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.company-logo {
+  width: 30px;
+}
+.company-logo.arintra-logo {
+  width: 150px;
+}
+.company-logo.sapient-logo {
+  width: 70px;
+}
+.company-logo.rebel-logo {
+  width: 100px;
+}
+.company-logo.d2d-logo {
+  width: 50px;
+}
+
+.company-logo img {
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .serviceList > * {
+    width: 50%;
+    order: 999 !important;
+  }
+  
+}

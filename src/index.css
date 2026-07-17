@@ -1,0 +1,9 @@
+/* Global styles — the 7 existing stylesheets, imported unchanged and in the
+   same order as the old index.html <link> tags. Do not rewrite these. */
+@import './css/style.css';
+@import './css/typography.css';
+@import './css/navbarStyle.css';
+@import './css/aboutStyle.css';
+@import './css/experienceStyle.css';
+@import './css/workStyle.css';
+@import './css/contactsStyle.css';
