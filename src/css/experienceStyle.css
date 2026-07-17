@@ -88,5 +88,34 @@
     width: 50%;
     order: 999 !important;
   }
-  
+
+}
+
+/* Mobile only (single-column view, below the 1024px 2-col breakpoint):
+   alternate the card backgrounds so no two adjacent cards share a colour.
+   In this view the flex `order` above lays cards out as:
+     Arintra, Rebel Foods, Publicis Sapient, Freelancing, Nickelfox, Door to Dumps
+   Only two cards flip vs desktop: Publicis Sapient (blue -> white) and
+   Freelancing (white -> blue). Desktop (>= 1024px) is intentionally unchanged. */
+@media only screen and (max-width: 1023px) {
+  /* Publicis Sapient: blue -> white (revert the light-on-dark text) */
+  .serviceList .ps-service {
+    background-color: var(--white);
+  }
+  .serviceList .ps-service h2 {
+    color: var(--black);
+  }
+  .serviceList .ps-service p {
+    color: #a6a7aa;
+  }
+
+  /* Freelancing: white -> blue (make text + icon light) */
+  .serviceList .freelance-service {
+    background-color: var(--cyanLight);
+  }
+  .serviceList .freelance-service h2,
+  .serviceList .freelance-service p,
+  .serviceList .freelance-service .icon-chemistry::before {
+    color: var(--white);
+  }
 }
