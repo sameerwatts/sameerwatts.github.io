@@ -1,7 +1,6 @@
+import { useState } from 'react';
 import GradientBar from './GradientBar.jsx';
 
-// Nav links; the first is the active one on load. Phase 2 makes `active` derive
-// from state instead of being hard-coded here.
 const links = [
   { label: 'HOME', href: '#' },
   { label: 'ABOUT', href: '#about' },
@@ -10,24 +9,42 @@ const links = [
   { label: 'CONTACT', href: '#contact' },
 ];
 
-// Static navbar (no toggling yet). Preserves the exact structure the CSS keys
-// off: id="mobile-menu" on the toggle and three sibling `.bar` spans for the
-// hamburger animation (see CLAUDE.md §4).
-export default function Navbar() {
+// `sticky` / `showLogo` come from useStickyNav (owned by Home, which also holds
+// the header ref). `navWrapperRef` lets Home measure this element's height.
+// Local state: which link is active, and whether the mobile menu is open.
+export default function Navbar({ sticky, showLogo, navWrapperRef }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Clicking a link activates it AND closes the mobile menu (old
+  // navLinkClickHandler removed both `mobile-nav` and `is-active`).
+  const handleLinkClick = (i) => {
+    setActiveIndex(i);
+    setMobileOpen(false);
+  };
+
   return (
-    <div className="nav-wrapper">
+    <div ref={navWrapperRef} className={`nav-wrapper${sticky ? ' active' : ''}`}>
       <GradientBar />
       <div className="navbar">
-        <p className="logo fw-600 fs-16 m-0">Samir Watts</p>
-        <div className="menu-toggle" id="mobile-menu">
+        <p className={`logo fw-600 fs-16 m-0${showLogo ? ' showLogo' : ''}`}>Samir Watts</p>
+        <div
+          className={`menu-toggle${mobileOpen ? ' is-active' : ''}`}
+          id="mobile-menu"
+          onClick={() => setMobileOpen((open) => !open)}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <ul className="nav">
+        <ul className={`nav${mobileOpen ? ' mobile-nav' : ''}`}>
           {links.map((link, i) => (
             <li key={link.label} className="nav-item fw-bolder fs-md-12 ls-1-6">
-              <a href={link.href} {...(i === 0 ? { active: '' } : {})}>
+              <a
+                href={link.href}
+                {...(activeIndex === i ? { active: '' } : {})}
+                onClick={() => handleLinkClick(i)}
+              >
                 {link.label}
               </a>
             </li>

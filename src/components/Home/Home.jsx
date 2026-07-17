@@ -1,14 +1,21 @@
+import { useRef } from 'react';
 import Navbar from '../Navbar/Navbar.jsx';
+import { useStickyNav } from '../../hooks/useStickyNav.js';
 
-// Home/hero section. Navbar stays inside `.page-wrapper` exactly as in the old
-// markup: `.nav-wrapper` is position:fixed with no `top`, so its resolved
-// position depends on its static DOM location — keep it first here.
+// Home/hero section. Owns the refs the sticky-nav math needs (the header and
+// the nav-wrapper) and passes the derived sticky/showLogo flags into Navbar.
+// Navbar stays inside `.page-wrapper` because `.nav-wrapper` is position:fixed
+// with no `top`, so its resolved position depends on its static DOM location.
 export default function Home() {
+  const headerRef = useRef(null);
+  const navWrapperRef = useRef(null);
+  const { sticky, showLogo } = useStickyNav(headerRef, navWrapperRef);
+
   return (
     <section className="home" id="home">
       <div className="page-wrapper">
-        <Navbar />
-        <div className="header lh-1-27">
+        <Navbar sticky={sticky} showLogo={showLogo} navWrapperRef={navWrapperRef} />
+        <div ref={headerRef} className="header lh-1-27">
           <div className="header-text-first fs-lg-70 fs-md-50 fs-30 fw-900">
             S<span>a</span>mir
           </div>

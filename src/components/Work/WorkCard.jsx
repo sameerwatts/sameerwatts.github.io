@@ -1,11 +1,20 @@
-// One work card plus its (currently always-rendered, hidden-by-CSS) popup detail.
-// Thumbs with a `label` use the two-row image+caption layout. Phase 2 adds the
-// open/close behaviour to `.work-trigger` and the `.hide-popup` button.
-export default function WorkCard({ title, containerClass, thumb, paragraphs, link }) {
+// One work card plus its popup detail. Clicking the trigger opens this card's
+// popup; the × closes it (stopPropagation so the close click doesn't re-open via
+// the trigger — mirrors the old showWorkPopup / hidePopupHandler pair).
+export default function WorkCard({
+  title,
+  containerClass,
+  thumb,
+  paragraphs,
+  link,
+  isOpen,
+  onOpen,
+  onClose,
+}) {
   const containerClassName = ['work-img-container', containerClass].filter(Boolean).join(' ');
   return (
     <div className="work">
-      <div className="work-trigger">
+      <div className="work-trigger" onClick={onOpen}>
         <div className={containerClassName}>
           {thumb.label ? (
             <>
@@ -24,12 +33,20 @@ export default function WorkCard({ title, containerClass, thumb, paragraphs, lin
           )}
         </div>
 
-        <div className="work-detail">
+        <div className={`work-detail${isOpen ? ' show' : ''}`}>
           <div className="work-detail-heading mb-60">
             <div>
               <h3 className="m-0">{title}</h3>
             </div>
-            <button className="hide-popup fs-28">&times;</button>
+            <button
+              className="hide-popup fs-28"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+            >
+              &times;
+            </button>
           </div>
           <div className="desc">
             <div className="work-desc">
