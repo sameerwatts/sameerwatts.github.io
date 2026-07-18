@@ -1,6 +1,8 @@
-// One work card plus its popup detail. Clicking the trigger opens this card's
-// popup; the × closes it (stopPropagation so the close click doesn't re-open via
-// the trigger — mirrors the old showWorkPopup / hidePopupHandler pair).
+// One work card plus its popup detail. The thumbnail is a real <button> that
+// opens the popup; the × closes it. The popup is a sibling of the button (not
+// nested inside it) because a <button> may not contain interactive content like
+// the popup's close button and team link. `.work-detail` is position:fixed, so
+// moving it out of the trigger doesn't change where it renders on screen.
 export default function WorkCard({
   title,
   containerClass,
@@ -16,7 +18,12 @@ export default function WorkCard({
     .join(' ');
   return (
     <div className="work">
-      <div className="work-trigger" onClick={onOpen}>
+      <button
+        type="button"
+        className="work-trigger"
+        onClick={onOpen}
+        aria-label={`${title} — view details`}
+      >
         <div className={containerClassName}>
           {thumb.label ? (
             <>
@@ -35,41 +42,35 @@ export default function WorkCard({
             <img src={thumb.src} alt={thumb.alt} loading="lazy" />
           )}
         </div>
+      </button>
 
-        <div className={`work-detail${isOpen ? ' show' : ''}`}>
-          <div className="work-detail-heading mb-60">
-            <div>
-              <h3 className="m-0">{title}</h3>
-            </div>
-            <button
-              className="hide-popup fs-28"
-              onClick={(e) => {
-                e.stopPropagation();
-                onClose();
-              }}
-            >
-              &times;
-            </button>
+      <div className={`work-detail${isOpen ? ' show' : ''}`}>
+        <div className="work-detail-heading mb-60">
+          <div>
+            <h3 className="m-0">{title}</h3>
           </div>
-          <div className="desc">
-            <div className="work-desc">
-              {paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <div className="vertical-separator"></div>
-            <div className="horizontal-separator"></div>
-            <div className="team">
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={link.img.src}
-                  width={link.img.width}
-                  height={link.img.height}
-                  alt={link.img.alt}
-                  loading="lazy"
-                />
-              </a>
-            </div>
+          <button className="hide-popup fs-28" onClick={onClose}>
+            &times;
+          </button>
+        </div>
+        <div className="desc">
+          <div className="work-desc">
+            {paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+          <div className="vertical-separator"></div>
+          <div className="horizontal-separator"></div>
+          <div className="team">
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+              <img
+                src={link.img.src}
+                width={link.img.width}
+                height={link.img.height}
+                alt={link.img.alt}
+                loading="lazy"
+              />
+            </a>
           </div>
         </div>
       </div>
