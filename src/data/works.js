@@ -84,14 +84,14 @@ export const works = [
     id: 'scopeworker',
     title: 'Scopeworker',
     containerClass: '',
-    thumb: { src: '/images/Scopeworker-Favicon.png', alt: 'scopeworker', label: 'Scopeworker' },
+    thumb: { src: '/images/Scopeworker-Favicon.webp', alt: 'scopeworker', label: 'Scopeworker' },
     paragraphs: [
       'Scopeworker is an enterprise B2B marketplace for critical infrastructure field services.',
       'I worked on various static and dynamic components across the website.',
     ],
     link: {
       href: 'https://www.scopeworker.com/',
-      img: { src: '/images/Scopeworker-Favicon.png', width: 100, height: 100, alt: 'scopeworker' },
+      img: { src: '/images/Scopeworker-Favicon.webp', width: 100, height: 100, alt: 'scopeworker' },
     },
   },
   {
