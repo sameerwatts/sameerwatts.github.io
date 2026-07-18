@@ -8,7 +8,7 @@ export default function About() {
       <div className="text-left description">
         <div className="mb-60">
           <p className="lh-1-5">
-            Frontend Developer with 3 years of experience in building Web applications,
+            Frontend Developer with 8 years of experience in building Web applications,
             dashboard and static pages for multiple clients across various domains and geographies
           </p>
         </div>
