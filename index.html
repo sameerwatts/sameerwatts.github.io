@@ -54,6 +54,35 @@
       name="twitter:image"
       content="https://sameerwatts.com/images/homeBg.jpg"
     />
+
+    <!-- JSON-LD Person structured data, built from src/data/contacts.js and
+         src/data/skills.js. Deliberately omits telephone (a phone number is
+         a much more sensitive harvesting target than email, and isn't
+         needed for this schema to be useful) and worksFor/alumniOf (the
+         page lists past experience and has no education section, so
+         neither would be accurate to claim). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sameer Watts",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://sameerwatts.com/",
+        "description": "Portfolio of Sameer (Samir) Watts, a Senior Software Engineer with 8+ years building web applications and dashboards using React, JavaScript, and modern frontend tools.",
+        "email": "sameer.watts00@gmail.com",
+        "sameAs": ["https://github.com/sameerwatts"],
+        "knowsAbout": [
+          "ReactJs",
+          "Redux",
+          "jQuery",
+          "Bootstrap",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Liquid"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
