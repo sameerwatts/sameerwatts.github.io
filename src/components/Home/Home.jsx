@@ -23,7 +23,7 @@ export default function Home() {
             W<span>a</span>tts
           </div>
         </div>
-        <div className="profile fs-lg-24 fs-md-20 fs-18">Front-end Developer</div>
+        <div className="profile fs-lg-24 fs-md-20 fs-18">Senior Software Engineer</div>
         <div className="underLine"></div>
       </div>
     </section>
