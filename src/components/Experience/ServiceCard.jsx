@@ -18,7 +18,7 @@ export default function ServiceCard({
       <div className="service-element">
         <div className={logoClassName}>
           {logo ? (
-            <img src={logo} alt={alt} />
+            <img src={logo} alt={alt} loading="lazy" />
           ) : (
             <i className={`service-icon mb-20 ${icon}`}></i>
           )}

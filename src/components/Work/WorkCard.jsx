@@ -22,6 +22,7 @@ export default function WorkCard({
                 <img
                   src={thumb.src}
                   alt={thumb.alt}
+                  loading="lazy"
                   {...(thumb.width ? { width: thumb.width } : {})}
                   {...(thumb.height ? { height: thumb.height } : {})}
                 />
@@ -29,7 +30,7 @@ export default function WorkCard({
               <div>{thumb.label}</div>
             </>
           ) : (
-            <img src={thumb.src} alt={thumb.alt} />
+            <img src={thumb.src} alt={thumb.alt} loading="lazy" />
           )}
         </div>
 
@@ -63,6 +64,7 @@ export default function WorkCard({
                   width={link.img.width}
                   height={link.img.height}
                   alt={link.img.alt}
+                  loading="lazy"
                 />
               </a>
             </div>
