@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 // One work card plus its popup detail. The thumbnail is a real <button> that
 // opens the popup; the × closes it. The popup is a sibling of the button (not
 // nested inside it) because a <button> may not contain interactive content like
@@ -21,9 +23,55 @@ export default function WorkCard({
   // dialog can point aria-labelledby at its own heading.
   const dialogId = `work-dialog-${id}`;
   const titleId = `work-dialog-title-${id}`;
+
+  const triggerRef = useRef(null);
+  const dialogRef = useRef(null);
+
+  // When the dialog opens: move focus into it and trap Tab within it. When it
+  // closes (or unmounts): return focus to the trigger that opened it. Closed
+  // dialogs also get `inert` (in the JSX below) so they aren't focusable or
+  // reachable by assistive tech while hidden.
+  useEffect(() => {
+    if (!isOpen) return;
+    const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
+    if (!dialog) return;
+
+    const focusablesIn = () =>
+      dialog.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+
+    // Move focus into the dialog (the × close button is first).
+    focusablesIn()[0]?.focus();
+
+    // Keep Tab / Shift+Tab cycling within the dialog.
+    const onKeyDown = (e) => {
+      if (e.key !== 'Tab') return;
+      const items = focusablesIn();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    dialog.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      dialog.removeEventListener('keydown', onKeyDown);
+      trigger?.focus();
+    };
+  }, [isOpen]);
+
   return (
     <div className="work">
       <button
+        ref={triggerRef}
         type="button"
         className="work-trigger"
         onClick={onOpen}
@@ -53,10 +101,12 @@ export default function WorkCard({
       </button>
 
       <div
+        ref={dialogRef}
         id={dialogId}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
+        inert={!isOpen}
         className={`work-detail${isOpen ? ' show' : ''}`}
       >
         <div className="work-detail-heading mb-60">
