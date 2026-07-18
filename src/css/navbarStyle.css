@@ -50,13 +50,13 @@
   position: relative;
 }
 .nav-item a::before {
-  content: " ";
+  content: ' ';
   width: 0;
   transition: width 0.3s ease-out;
 }
 .nav-item a:hover::before,
 .nav-item a[active]::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: -20px;
   top: 8px;

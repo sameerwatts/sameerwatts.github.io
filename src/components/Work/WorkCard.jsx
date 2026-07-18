@@ -11,7 +11,9 @@ export default function WorkCard({
   onOpen,
   onClose,
 }) {
-  const containerClassName = ['work-img-container', containerClass].filter(Boolean).join(' ');
+  const containerClassName = ['work-img-container', containerClass]
+    .filter(Boolean)
+    .join(' ');
   return (
     <div className="work">
       <div className="work-trigger" onClick={onOpen}>

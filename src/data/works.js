@@ -14,7 +14,12 @@ export const works = [
     ],
     link: {
       href: 'https://spark.faasos.io/login',
-      img: { src: '/images/spark-logo.svg', width: 200, height: 50, alt: 'spark' },
+      img: {
+        src: '/images/spark-logo.svg',
+        width: 200,
+        height: 50,
+        alt: 'spark',
+      },
     },
   },
   {
@@ -49,7 +54,12 @@ export const works = [
     ],
     link: {
       href: 'https://www.doortodumps.com/',
-      img: { src: '/images/D2DLogo.png', width: 90, height: 80, alt: 'Door to dumps logo' },
+      img: {
+        src: '/images/D2DLogo.png',
+        width: 90,
+        height: 80,
+        alt: 'Door to dumps logo',
+      },
     },
   },
   {
@@ -63,7 +73,12 @@ export const works = [
     ],
     link: {
       href: 'https://www.aptihealth.com/',
-      img: { src: '/images/logo.svg', width: 200, height: 50, alt: 'aptihealth' },
+      img: {
+        src: '/images/logo.svg',
+        width: 200,
+        height: 50,
+        alt: 'aptihealth',
+      },
     },
   },
   {
@@ -77,21 +92,35 @@ export const works = [
     ],
     link: {
       href: 'https://poweredx.com/',
-      img: { src: '/images/poweredX-b-logo.svg', width: 200, height: 50, alt: 'PoweredX' },
+      img: {
+        src: '/images/poweredX-b-logo.svg',
+        width: 200,
+        height: 50,
+        alt: 'PoweredX',
+      },
     },
   },
   {
     id: 'scopeworker',
     title: 'Scopeworker',
     containerClass: '',
-    thumb: { src: '/images/Scopeworker-Favicon.webp', alt: 'scopeworker', label: 'Scopeworker' },
+    thumb: {
+      src: '/images/Scopeworker-Favicon.webp',
+      alt: 'scopeworker',
+      label: 'Scopeworker',
+    },
     paragraphs: [
       'Scopeworker is an enterprise B2B marketplace for critical infrastructure field services.',
       'I worked on various static and dynamic components across the website.',
     ],
     link: {
       href: 'https://www.scopeworker.com/',
-      img: { src: '/images/Scopeworker-Favicon.webp', width: 100, height: 100, alt: 'scopeworker' },
+      img: {
+        src: '/images/Scopeworker-Favicon.webp',
+        width: 100,
+        height: 100,
+        alt: 'scopeworker',
+      },
     },
   },
   {
@@ -105,7 +134,12 @@ export const works = [
     ],
     link: {
       href: 'https://www.neobeema.com/',
-      img: { src: '/images/neobeema_logo.png', width: 200, height: 50, alt: 'Neobeema' },
+      img: {
+        src: '/images/neobeema_logo.png',
+        width: 200,
+        height: 50,
+        alt: 'Neobeema',
+      },
     },
   },
   {
@@ -119,7 +153,12 @@ export const works = [
     ],
     link: {
       href: 'https://aviteur.com/',
-      img: { src: '/images/aviteur-logo-orange-xl.png', width: 200, height: 25, alt: 'Aviteur' },
+      img: {
+        src: '/images/aviteur-logo-orange-xl.png',
+        width: 200,
+        height: 25,
+        alt: 'Aviteur',
+      },
     },
   },
   {
@@ -138,20 +177,34 @@ export const works = [
     ],
     link: {
       href: 'https://nickelfox.com/',
-      img: { src: '/images/nickelfox-black-logo-3-x.svg', width: 100, height: 100, alt: 'nickelfox logo' },
+      img: {
+        src: '/images/nickelfox-black-logo-3-x.svg',
+        width: 100,
+        height: 100,
+        alt: 'nickelfox logo',
+      },
     },
   },
   {
     id: 'ratingfinder',
     title: 'Rating Finder',
     containerClass: '',
-    thumb: { src: '/images/icon48.png', alt: 'Rating Finder', label: 'RatingFinder' },
+    thumb: {
+      src: '/images/icon48.png',
+      alt: 'Rating Finder',
+      label: 'RatingFinder',
+    },
     paragraphs: [
       "This Extension for Netflix, displays IMDB's rating of movies on thumbnail image. Built the whole extension single handedly as a side project.",
     ],
     link: {
       href: 'https://chrome.google.com/webstore/search/ratingfinder?hl=en',
-      img: { src: '/images/icon128.png', width: 100, height: 100, alt: 'Rating Finder' },
+      img: {
+        src: '/images/icon128.png',
+        width: 100,
+        height: 100,
+        alt: 'Rating Finder',
+      },
     },
   },
 ];

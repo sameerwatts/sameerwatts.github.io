@@ -10,13 +10,13 @@
   width: 100%;
 }
 .serviceList .nickelfox-service {
-  order: 2
+  order: 2;
 }
 .serviceList .freelance-service {
-  order: 1
+  order: 1;
 }
 .serviceList .d2d-service {
-  order: 3
+  order: 3;
 }
 .service {
   padding: 30px;
@@ -43,7 +43,7 @@
   display: block;
 }
 .icon-chemistry::before {
-  content: "\2668";
+  content: '\2668';
   color: var(--black);
   font-size: 40px;
 }
@@ -88,7 +88,6 @@
     width: 50%;
     order: 999 !important;
   }
-
 }
 
 /* Mobile only (single-column view, below the 1024px 2-col breakpoint):
