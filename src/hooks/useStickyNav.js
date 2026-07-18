@@ -9,7 +9,9 @@ export function useStickyNav(headerRef, navWrapperRef) {
   const [showLogo, setShowLogo] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const header = headerRef.current;
       const navWrapper = navWrapperRef.current;
       if (!header || !navWrapper) return;
@@ -21,8 +23,14 @@ export function useStickyNav(headerRef, navWrapperRef) {
         setShowLogo(false);
       }
     };
-    window.addEventListener('scroll', onScroll);
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
     return () => window.removeEventListener('scroll', onScroll);
   }, [headerRef, navWrapperRef]);
 
