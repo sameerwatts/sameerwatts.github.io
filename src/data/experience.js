@@ -28,7 +28,7 @@ export const companies = [
     name: 'Publicis Sapient',
     serviceClass: 'bg-cyanLight ps-service',
     logoClass: 'sapient-logo',
-    logo: '/images/Sapient.png',
+    logo: '/images/Sapient.webp',
     alt: 'Sapient logo',
     blurb: 'Publicis Sapient is an American digital consulting company.',
     white: true,
