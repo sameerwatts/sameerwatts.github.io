@@ -44,7 +44,7 @@
 .desc {
   display: grid;
   grid-template-columns: 4fr 1fr 2fr;
-  grid-template-areas: "work-desc work-desc work-desc" "horizontal-separator horizontal-separator horizontal-separator" "team team team";
+  grid-template-areas: 'work-desc work-desc work-desc' 'horizontal-separator horizontal-separator horizontal-separator' 'team team team';
 }
 
 .work-desc {
@@ -117,7 +117,7 @@
     display: none;
   }
   .desc {
-    grid-template-areas: "work-desc vartical-separator team";
+    grid-template-areas: 'work-desc vartical-separator team';
   }
   .work-detail {
     width: 730px;

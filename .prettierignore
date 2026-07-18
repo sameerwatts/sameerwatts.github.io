@@ -1,2 +1,7 @@
 dist
 node_modules
+
+# Documentation prose with embedded illustrative code samples — Prettier can
+# reformat code inside fenced blocks, risking unintended changes to examples
+# that are meant to stay exactly as written. Human-edited only.
+CLAUDE.md

@@ -12,7 +12,9 @@ export default function ServiceCard({
   white,
   hasLink,
 }) {
-  const logoClassName = ['company-logo', logoClass, 'mb-20'].filter(Boolean).join(' ');
+  const logoClassName = ['company-logo', logoClass, 'mb-20']
+    .filter(Boolean)
+    .join(' ');
   return (
     <div className={['service', serviceClass].filter(Boolean).join(' ')}>
       <div className="service-element">
@@ -25,7 +27,11 @@ export default function ServiceCard({
         </div>
       </div>
       <div className="service-info">
-        <h2 className={['mb-20', white ? 'white' : ''].filter(Boolean).join(' ')}>{name}</h2>
+        <h2
+          className={['mb-20', white ? 'white' : ''].filter(Boolean).join(' ')}
+        >
+          {name}
+        </h2>
         <p className={white ? 'white' : ''}>{blurb}</p>
       </div>
       {hasLink && <a className="content-wrapper-link" href="#"></a>}

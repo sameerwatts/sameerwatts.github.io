@@ -4,7 +4,10 @@ import { companies } from '../../data/experience.js';
 
 export default function Experience() {
   return (
-    <section className="experience bg-color-sky-light section-content" id="experience">
+    <section
+      className="experience bg-color-sky-light section-content"
+      id="experience"
+    >
       <SectionTitle heading="Experience" tagline="Batman would be jealous.." />
       <div className="text-left description">
         <div className="serviceList">

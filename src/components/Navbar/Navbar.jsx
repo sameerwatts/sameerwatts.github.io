@@ -24,10 +24,15 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
   };
 
   return (
-    <div ref={navWrapperRef} className={`nav-wrapper${sticky ? ' active' : ''}`}>
+    <div
+      ref={navWrapperRef}
+      className={`nav-wrapper${sticky ? ' active' : ''}`}
+    >
       <GradientBar />
       <div className="navbar">
-        <p className={`logo fw-600 fs-16 m-0${showLogo ? ' showLogo' : ''}`}>Samir Watts</p>
+        <p className={`logo fw-600 fs-16 m-0${showLogo ? ' showLogo' : ''}`}>
+          Samir Watts
+        </p>
         <div
           className={`menu-toggle${mobileOpen ? ' is-active' : ''}`}
           id="mobile-menu"

@@ -14,7 +14,11 @@ export default function Home() {
   return (
     <section className="home" id="home">
       <div className="page-wrapper">
-        <Navbar sticky={sticky} showLogo={showLogo} navWrapperRef={navWrapperRef} />
+        <Navbar
+          sticky={sticky}
+          showLogo={showLogo}
+          navWrapperRef={navWrapperRef}
+        />
         <h1 ref={headerRef} className="header lh-1-27">
           <div className="header-text-first fs-lg-70 fs-md-50 fs-30 fw-900">
             S<span>a</span>mir
@@ -23,7 +27,9 @@ export default function Home() {
             W<span>a</span>tts
           </div>
         </h1>
-        <div className="profile fs-lg-24 fs-md-20 fs-18">Senior Software Engineer</div>
+        <div className="profile fs-lg-24 fs-md-20 fs-18">
+          Senior Software Engineer
+        </div>
         <div className="underLine"></div>
       </div>
     </section>
