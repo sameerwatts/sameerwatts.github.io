@@ -98,6 +98,12 @@ p {
 }
 .header {
   grid-column: 3/5;
+  /* Overrides the global h1-h6 rule (color/font-family/margin) now that this
+     is a real <h1> — a class selector outranks an element selector, so these
+     win regardless of source order and restore the original look exactly. */
+  color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 /* .header .header-text-last {
   transform: translate(0px, 0px);

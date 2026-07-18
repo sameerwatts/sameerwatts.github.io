@@ -15,14 +15,14 @@ export default function Home() {
     <section className="home" id="home">
       <div className="page-wrapper">
         <Navbar sticky={sticky} showLogo={showLogo} navWrapperRef={navWrapperRef} />
-        <div ref={headerRef} className="header lh-1-27">
+        <h1 ref={headerRef} className="header lh-1-27">
           <div className="header-text-first fs-lg-70 fs-md-50 fs-30 fw-900">
             S<span>a</span>mir
           </div>
           <div className="header-text-last fs-lg-70 fs-md-50 fs-30 fw-900">
             W<span>a</span>tts
           </div>
-        </div>
+        </h1>
         <div className="profile fs-lg-24 fs-md-20 fs-18">Senior Software Engineer</div>
         <div className="underLine"></div>
       </div>
