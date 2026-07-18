@@ -4,6 +4,7 @@
 // the popup's close button and team link. `.work-detail` is position:fixed, so
 // moving it out of the trigger doesn't change where it renders on screen.
 export default function WorkCard({
+  id,
   title,
   containerClass,
   thumb,
@@ -16,6 +17,10 @@ export default function WorkCard({
   const containerClassName = ['work-img-container', containerClass]
     .filter(Boolean)
     .join(' ');
+  // Unique ids so the trigger can point aria-controls at its dialog, and the
+  // dialog can point aria-labelledby at its own heading.
+  const dialogId = `work-dialog-${id}`;
+  const titleId = `work-dialog-title-${id}`;
   return (
     <div className="work">
       <button
@@ -23,6 +28,9 @@ export default function WorkCard({
         className="work-trigger"
         onClick={onOpen}
         aria-label={`${title} — view details`}
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
+        aria-controls={dialogId}
       >
         <div className={containerClassName}>
           {thumb.label ? (
@@ -44,10 +52,18 @@ export default function WorkCard({
         </div>
       </button>
 
-      <div className={`work-detail${isOpen ? ' show' : ''}`}>
+      <div
+        id={dialogId}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        className={`work-detail${isOpen ? ' show' : ''}`}
+      >
         <div className="work-detail-heading mb-60">
           <div>
-            <h3 className="m-0">{title}</h3>
+            <h3 id={titleId} className="m-0">
+              {title}
+            </h3>
           </div>
           <button className="hide-popup fs-28" onClick={onClose}>
             &times;
