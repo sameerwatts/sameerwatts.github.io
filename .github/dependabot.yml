@@ -1,0 +1,26 @@
+version: 2
+updates:
+  # npm dependencies (React, Vite, ESLint/Prettier, etc.)
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # Group related bumps into one PR each to cut down on noise.
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
+      dev-dependencies:
+        dependency-type: development
+
+  # GitHub Actions used in the CI and deploy workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - '*'
