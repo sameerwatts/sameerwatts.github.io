@@ -90,7 +90,7 @@ p {
   height: 80vh;
   align-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(/images/homeBg.jpg);
+    url(/images/homeBg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
