@@ -10,7 +10,7 @@ export const works = [
     thumb: { src: '/images/spark-logo.svg', alt: 'Spark' },
     paragraphs: [
       'Spark is an inventory management tool, helps cloud kitchen user to manage their kitchen inventory.',
-      'I have handled frontend of the Spark (Kitchen inventory management) project with another fronten engineer in a team of total 21 engineers. Worked on the various features in the GRN workfow, store transfers management and Reports. I have extensively used ReactJS, axios, formik, npm among others during my tenure. I have also had the opportunity to work across multiple teams and interfaced with multiple stakeholders in the organization.',
+      'I have handled frontend of the Spark (Kitchen inventory management) project with another frontend engineer in a team of total 21 engineers. Worked on the various features in the GRN workflow, store transfers management and Reports. I have extensively used ReactJS, axios, formik, npm among others during my tenure. I have also had the opportunity to work across multiple teams and interfaced with multiple stakeholders in the organization.',
     ],
     link: {
       href: 'https://spark.faasos.io/login',
@@ -35,7 +35,7 @@ export const works = [
         src: 'https://www.albertsons.com/content/dam/safeway/images/logos/Albertsons_RGB.svg',
         width: 200,
         height: 50,
-        alt: 'aptihealth',
+        alt: 'Albertsons',
       },
     },
   },
@@ -43,13 +43,13 @@ export const works = [
     id: 'doortodumps',
     title: 'Door to dumps',
     containerClass: 'D2DImg',
-    thumb: { src: '/images/D2DLogo.png', alt: 'albertsons' },
+    thumb: { src: '/images/D2DLogo.png', alt: 'Door to dumps logo' },
     paragraphs: [
       'Being the sole frontend developer, built customer application and website on React js single handedly. Contributed in UX and product decisions as well at multiple places.',
     ],
     link: {
       href: 'https://www.doortodumps.com/',
-      img: { src: '/images/D2DLogo.png', width: 90, height: 80, alt: 'aptihealth' },
+      img: { src: '/images/D2DLogo.png', width: 90, height: 80, alt: 'Door to dumps logo' },
     },
   },
   {
