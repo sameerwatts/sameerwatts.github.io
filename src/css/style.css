@@ -13,6 +13,13 @@ a {
 }
 html {
   scroll-behavior: smooth;
+  /* Reserve the scrollbar's space so toggling .scroll-locked (overflow:hidden,
+     applied while a work popup is open) doesn't shift the layout sideways. */
+  scrollbar-gutter: stable;
+}
+/* Applied to <html> while a modal is open to prevent background scroll. */
+.scroll-locked {
+  overflow: hidden;
 }
 .overlay {
   position: fixed;

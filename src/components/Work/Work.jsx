@@ -19,6 +19,16 @@ export default function Work() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [openWork]);
 
+  // Lock page scroll while a popup is open so the background can't scroll
+  // behind the modal. `scrollbar-gutter: stable` on <html> (in style.css)
+  // keeps the layout from shifting when the scrollbar is removed.
+  useEffect(() => {
+    if (openWork === null) return;
+    const root = document.documentElement;
+    root.classList.add('scroll-locked');
+    return () => root.classList.remove('scroll-locked');
+  }, [openWork]);
+
   return (
     <section className="work section-content" id="work">
       <Overlay show={openWork !== null} onClose={() => setOpenWork(null)} />
