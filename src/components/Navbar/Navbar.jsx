@@ -33,16 +33,23 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
         <p className={`logo fw-600 fs-16 m-0${showLogo ? ' showLogo' : ''}`}>
           Samir Watts
         </p>
-        <div
+        <button
+          type="button"
           className={`menu-toggle${mobileOpen ? ' is-active' : ''}`}
           id="mobile-menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
+          aria-controls="primary-navigation"
           onClick={() => setMobileOpen((open) => !open)}
         >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </div>
-        <ul className={`nav${mobileOpen ? ' mobile-nav' : ''}`}>
+        </button>
+        <ul
+          id="primary-navigation"
+          className={`nav${mobileOpen ? ' mobile-nav' : ''}`}
+        >
           {links.map((link, i) => (
             <li key={link.label} className="nav-item fw-bolder fs-md-12 ls-1-6">
               <a

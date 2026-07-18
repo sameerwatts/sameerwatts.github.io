@@ -79,6 +79,13 @@
 .menu-toggle {
   justify-self: end;
   display: none;
+  /* Reset the default <button> chrome so the hamburger looks identical to when
+     it was a <div> (it's now a real button for keyboard accessibility). */
+  padding: 0;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .menu-toggle:hover {
