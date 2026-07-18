@@ -6,7 +6,7 @@ export default function ContactItem({ label, text, href, external, download }) {
       {href ? (
         <a
           href={href}
-          {...(external ? { target: '_blank' } : {})}
+          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           {...(download ? { download: true } : {})}
         >
           <p>{text}</p>

@@ -57,7 +57,7 @@ export default function WorkCard({
             <div className="vertical-separator"></div>
             <div className="horizontal-separator"></div>
             <div className="team">
-              <a href={link.href} target="_blank">
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
                 <img
                   src={link.img.src}
                   width={link.img.width}
