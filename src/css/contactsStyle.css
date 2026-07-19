@@ -10,3 +10,74 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Contact form. All colours come from the semantic tokens so it adapts to the
+   dark theme automatically. */
+.contact-form {
+  margin-top: 40px;
+  display: grid;
+  grid-gap: 20px;
+  max-width: 640px;
+}
+.contact-form-row {
+  display: grid;
+  grid-gap: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .contact-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact-field {
+  display: grid;
+  grid-gap: 6px;
+}
+.contact-field label {
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+.contact-field textarea {
+  resize: vertical;
+}
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+.contact-field input:disabled,
+.contact-field textarea:disabled {
+  opacity: 0.6;
+}
+.contact-submit {
+  justify-self: start;
+  padding: 11px 26px;
+  font-size: 0.9375rem;
+  color: var(--on-hero);
+  background-color: var(--cyan);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.contact-submit:hover {
+  opacity: 0.9;
+}
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+/* Empty until a submit resolves; margin only applies once it has text. */
+.contact-status:not(:empty) {
+  margin: 0;
+}
