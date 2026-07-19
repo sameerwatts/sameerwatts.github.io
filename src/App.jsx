@@ -9,8 +9,13 @@ import Contact from './components/Contact/Contact.jsx';
 export default function App() {
   return (
     <>
+      {/* First focusable element on the page: lets keyboard users jump past the
+          nav straight to the main content. Hidden off-screen until focused. */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Home />
-      <div className="details">
+      <div id="main-content" tabIndex={-1} className="details">
         <About />
         <Experience />
         <Work />
