@@ -2,6 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Pick the theme before the first paint so the page never flashes the
+         wrong colours. Prefers a previously saved choice, otherwise the OS
+         setting. Kept tiny and inline (not a module) so it runs before the CSS
+         and JS bundles load. useTheme.js reads this back on mount. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme =
+            saved === 'dark' || saved === 'light'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <!-- Preserve this exact viewport meta — mobile scaling depends on it (see CLAUDE.md §4). -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />

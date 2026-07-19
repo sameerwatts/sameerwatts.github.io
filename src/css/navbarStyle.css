@@ -91,6 +91,31 @@
 .menu-toggle:hover {
   cursor: pointer;
 }
+
+/* Theme toggle: absolutely positioned against the fixed .nav-wrapper so it sits
+   at the right edge without joining (and disturbing) the navbar grid. Icon
+   inherits currentColor — light over the hero photo, dark once sticky. Desktop
+   places it in the empty right-hand column, past the nav links. */
+.theme-toggle {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: var(--on-hero);
+  cursor: pointer;
+  line-height: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.nav-wrapper.active .theme-toggle {
+  color: var(--text);
+}
 #mobile-menu.is-active .bar:nth-child(2) {
   opacity: 0;
 }
@@ -200,5 +225,11 @@
 
   .navbar ul.mobile-nav {
     transform: translate(0%) !important;
+  }
+
+  /* The hamburger appears at the far right on mobile; shift the theme toggle
+     left so the two don't overlap. */
+  .theme-toggle {
+    right: 60px;
   }
 }
