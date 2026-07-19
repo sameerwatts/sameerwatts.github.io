@@ -1,5 +1,6 @@
 import SectionTitle from '../common/SectionTitle.jsx';
 import ContactItem from './ContactItem.jsx';
+import ContactForm from './ContactForm.jsx';
 import { contacts } from '../../data/contacts.js';
 
 export default function Contact() {
@@ -12,6 +13,7 @@ export default function Contact() {
             <ContactItem key={c.label} {...c} />
           ))}
         </div>
+        <ContactForm />
       </div>
     </section>
   );
