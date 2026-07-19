@@ -219,7 +219,7 @@ p {
     grid-column: 3/6;
   }
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .text-lg-right {
     text-align: right;
   }
