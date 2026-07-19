@@ -7,14 +7,14 @@
   z-index: 10;
 }
 .nav-wrapper.active {
-  background-color: var(--white);
+  background-color: var(--surface);
 }
 .nav-wrapper.active p,
 .nav-wrapper.active a {
-  color: var(--black);
+  color: var(--text);
 }
 .nav-wrapper.active .menu-toggle .bar {
-  background-color: var(--black);
+  background-color: var(--text);
 }
 .navbar {
   display: grid;
@@ -44,7 +44,7 @@
   grid-column: 3/4;
 }
 .nav-item a {
-  color: var(--white);
+  color: var(--on-hero);
   font-weight: 400;
   text-decoration: none;
   position: relative;
@@ -69,7 +69,7 @@
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--white);
+  background-color: var(--on-hero);
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -171,7 +171,7 @@
     position: fixed;
     justify-content: start;
     top: 100px;
-    background-color: var(--white);
+    background-color: var(--surface);
     width: 100%;
     height: calc(100vh - 55px);
     transform: translate(-101%);
@@ -189,7 +189,7 @@
 
   .navbar li a {
     font-size: 1rem;
-    color: var(--black);
+    color: var(--text);
   }
 
   .menu-toggle,
