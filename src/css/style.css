@@ -15,6 +15,27 @@
 a {
   text-decoration: none;
 }
+/* Skip-to-content link: off-screen until it receives keyboard focus, then it
+   slides into the top-left. z-index sits above the fixed navbar/overlay (10). */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 4px;
+  transition: top 0.2s ease-in-out;
+}
+.skip-link:focus {
+  top: 8px;
+}
+/* The skip target is only focusable programmatically (tabindex=-1); suppress the
+   focus ring on the whole content block it would otherwise draw. */
+#main-content:focus {
+  outline: none;
+}
 html {
   scroll-behavior: smooth;
   /* Reserve the scrollbar's space so toggling .scroll-locked (overflow:hidden,
