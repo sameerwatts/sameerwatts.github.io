@@ -1,16 +1,22 @@
 :root {
+  /* Accent colours (used directly; unchanged between light and dark). */
   --cyan: #337ab7;
-  --black: #515769;
-  --gray: #81848f;
-  --lightGray: #999caa;
-  --white: #ffffff;
   --cyanLight: #17bed2;
-  --backgroundColor: #fafafa;
-  --lighterGray: #bfc3c7;
+
   /* Accessible muted text: 4.89:1 on white, 4.68:1 on #fafafa — both pass
      WCAG AA. Replaces #a6a7aa (2.41:1) / #999caa (2.73:1) / #bfc3c7 (1.77:1),
      which all failed. */
   --text-muted: #6e7178;
+
+  /* Semantic, role-based tokens. Light-theme values equal the colours used
+     before, so this is a no-visual-change refactor — the groundwork that lets
+     a dark theme override these in one place (follow-up PR). */
+  --surface: #ffffff; /* cards, popups, sticky navbar, mobile menu, skip link */
+  --surface-alt: #fafafa; /* the Experience section band */
+  --track: #f5f5f5; /* skill-bar track */
+  --text: #515769; /* headings + primary text on surfaces */
+  --border: #bfc3c7; /* dividers / separators */
+  --on-hero: #ffffff; /* text/icons over the dark hero photo — stays light */
 }
 a {
   text-decoration: none;
@@ -23,8 +29,8 @@ a {
   left: 8px;
   z-index: 100;
   padding: 10px 16px;
-  background: var(--white);
-  color: var(--black);
+  background: var(--surface);
+  color: var(--text);
   border-radius: 4px;
   transition: top 0.2s ease-in-out;
 }
@@ -80,7 +86,7 @@ h5,
 h6 {
   font-family: Hind, sans-serif;
   font-weight: 700;
-  color: var(--black);
+  color: var(--text);
   line-height: 1.4;
   margin: 0 0 15px;
 }
@@ -126,7 +132,7 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: var(--white);
+  color: var(--on-hero);
 }
 .header {
   grid-column: 3/5;

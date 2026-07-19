@@ -23,7 +23,7 @@
   z-index: 10;
   top: 50%;
   left: 50%;
-  background-color: var(--white);
+  background-color: var(--surface);
   padding: 30px;
   width: 95%;
   transform: translate(-50%, -50%);
@@ -33,7 +33,7 @@
 }
 .hide-popup {
   border: none;
-  background-color: var(--white);
+  background-color: var(--surface);
   color: var(--text-muted);
   height: 0;
   line-height: 0;
@@ -41,7 +41,7 @@
   transition: color 0.5s ease;
 }
 .hide-popup:hover {
-  color: var(--black);
+  color: var(--text);
 }
 .hide-popup:focus {
   outline: none;
@@ -67,14 +67,14 @@
   grid-area: work-desc;
 }
 .vertical-separator {
-  border-left: 1px solid var(--lighterGray);
+  border-left: 1px solid var(--border);
   height: 100%;
   margin: 0 auto;
   grid-area: vartical-separator;
   display: none;
 }
 .horizontal-separator {
-  border-bottom: 1px solid var(--lighterGray);
+  border-bottom: 1px solid var(--border);
   width: 100%;
   display: block;
   grid-area: horizontal-separator;
@@ -86,7 +86,7 @@
   text-align: center;
 }
 .work-detail-heading span {
-  color: var(--lighterGray);
+  color: var(--border);
 }
 .work-overlay {
   position: absolute;

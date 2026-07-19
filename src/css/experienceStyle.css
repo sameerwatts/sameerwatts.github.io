@@ -1,5 +1,5 @@
 .bg-color-sky-light {
-  background-color: var(--backgroundColor);
+  background-color: var(--surface-alt);
 }
 .serviceList {
   display: flex;
@@ -21,7 +21,7 @@
 .service {
   padding: 30px;
   position: relative;
-  background-color: var(--white);
+  background-color: var(--surface);
 }
 .service .service-element,
 .service .service-info {
@@ -44,7 +44,7 @@
 }
 .icon-chemistry::before {
   content: '\2668';
-  color: var(--black);
+  color: var(--text);
   font-size: 40px;
 }
 .bg-cyanLight {
@@ -52,7 +52,7 @@
 }
 .white,
 .white::before {
-  color: var(--white);
+  color: var(--on-hero);
 }
 /* White text on the cyan cards only hit 2.25:1 (fails WCAG AA). Per the chosen
    fix, keep the cyan background but use near-black text (#333 -> 5.61:1). The
@@ -106,10 +106,10 @@
 @media only screen and (max-width: 1023px) {
   /* Publicis Sapient: blue -> white (revert the light-on-dark text) */
   .serviceList .ps-service {
-    background-color: var(--white);
+    background-color: var(--surface);
   }
   .serviceList .ps-service h2 {
-    color: var(--black);
+    color: var(--text);
   }
   .serviceList .ps-service p {
     color: var(--text-muted);
