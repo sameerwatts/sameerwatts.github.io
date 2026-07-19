@@ -54,6 +54,13 @@
 .white::before {
   color: var(--white);
 }
+/* White text on the cyan cards only hit 2.25:1 (fails WCAG AA). Per the chosen
+   fix, keep the cyan background but use near-black text (#333 -> 5.61:1). The
+   higher-specificity mobile rules below still win for cards that flip colour. */
+.bg-cyanLight .white,
+.bg-cyanLight .white::before {
+  color: #333;
+}
 .content-wrapper-link {
   position: absolute;
   top: 0;
@@ -105,16 +112,16 @@
     color: var(--black);
   }
   .serviceList .ps-service p {
-    color: #a6a7aa;
+    color: var(--text-muted);
   }
 
-  /* Freelancing: white -> blue (make text + icon light) */
+  /* Freelancing: white -> blue. Dark text (#333) on the cyan bg for contrast. */
   .serviceList .freelance-service {
     background-color: var(--cyanLight);
   }
   .serviceList .freelance-service h2,
   .serviceList .freelance-service p,
   .serviceList .freelance-service .icon-chemistry::before {
-    color: var(--white);
+    color: #333;
   }
 }

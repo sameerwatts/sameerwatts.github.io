@@ -7,6 +7,10 @@
   --cyanLight: #17bed2;
   --backgroundColor: #fafafa;
   --lighterGray: #bfc3c7;
+  /* Accessible muted text: 4.89:1 on white, 4.68:1 on #fafafa — both pass
+     WCAG AA. Replaces #a6a7aa (2.41:1) / #999caa (2.73:1) / #bfc3c7 (1.77:1),
+     which all failed. */
+  --text-muted: #6e7178;
 }
 a {
   text-decoration: none;
@@ -62,7 +66,7 @@ h6 {
 p {
   font-size: 15px;
   font-weight: 400;
-  color: #a6a7aa;
+  color: var(--text-muted);
   margin-bottom: 15px;
 }
 .m-0 {

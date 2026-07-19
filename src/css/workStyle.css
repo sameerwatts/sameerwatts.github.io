@@ -34,7 +34,7 @@
 .hide-popup {
   border: none;
   background-color: var(--white);
-  color: var(--lighterGray);
+  color: var(--text-muted);
   height: 0;
   line-height: 0;
   cursor: pointer;
@@ -81,7 +81,7 @@
   margin: 30px 0;
 }
 .team {
-  color: var(--lightGray);
+  color: var(--text-muted);
   grid-area: team;
   text-align: center;
 }
