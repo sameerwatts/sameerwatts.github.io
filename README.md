@@ -1,6 +1,6 @@
 # sameerwatts.github.io
 
-Personal portfolio site for Sameer (Samir) Watts, live at
+Personal portfolio site for Samir Watts, live at
 **[sameerwatts.com](https://sameerwatts.com)**.
 
 A single-page site — Home, About, Experience, Work, Contact — built with React
