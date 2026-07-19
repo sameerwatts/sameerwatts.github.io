@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import GradientBar from './GradientBar.jsx';
 
+// `section` is the id of the page section each link points to (HOME's href is
+// '#', not '#home', so the section id is tracked separately for scroll-spy).
 const links = [
-  { label: 'HOME', href: '#' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'EXPERIENCE', href: '#experience' },
-  { label: 'WORK', href: '#work' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'HOME', href: '#', section: 'home' },
+  { label: 'ABOUT', href: '#about', section: 'about' },
+  { label: 'EXPERIENCE', href: '#experience', section: 'experience' },
+  { label: 'WORK', href: '#work', section: 'work' },
+  { label: 'CONTACT', href: '#contact', section: 'contact' },
 ];
 
 // `sticky` / `showLogo` come from useStickyNav (owned by Home, which also holds
@@ -32,6 +34,33 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
     root.classList.add('scroll-locked');
     return () => root.classList.remove('scroll-locked');
   }, [mobileOpen]);
+
+  // Scroll-spy: highlight the nav link for whichever section is in the middle of
+  // the viewport, so the active link tracks scrolling (not just clicks). The
+  // rootMargin leaves a ~10% band centred vertically; a section counts as active
+  // while it overlaps that band. When two overlap (mid-transition) the earlier
+  // one in document order wins.
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.getElementById(l.section))
+      .filter(Boolean);
+    if (sections.length === 0) return;
+
+    const visible = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target.id);
+          else visible.delete(entry.target.id);
+        }
+        const idx = links.findIndex((l) => visible.has(l.section));
+        if (idx !== -1) setActiveIndex(idx);
+      },
+      { rootMargin: '-45% 0px -45% 0px' },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
