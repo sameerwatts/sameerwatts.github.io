@@ -10,7 +10,7 @@ export const works = [
     thumb: { src: '/images/spark-logo.svg', alt: 'Spark' },
     paragraphs: [
       'Spark is an inventory management tool, helps cloud kitchen user to manage their kitchen inventory.',
-      'I have handled frontend of the Spark (Kitchen inventory management) project with another frontend engineer in a team of total 21 engineers. Worked on the various features in the GRN workflow, store transfers management and Reports. I have extensively used ReactJS, axios, formik, npm among others during my tenure. I have also had the opportunity to work across multiple teams and interfaced with multiple stakeholders in the organization.',
+      'I have handled frontend of the Spark (Kitchen inventory management) project with another frontend engineer in a team of total 21 engineers. Worked on the various features in the GRN workflow, store transfers management and Reports. I have extensively used ReactJS, axios, formik, npm among others during my tenure. I have also had the opportunity to work across multiple teams and interfaced with multiple stakeholders in the organisation.',
     ],
     link: {
       href: 'https://spark.faasos.io/login',
