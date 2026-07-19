@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import GradientBar from './GradientBar.jsx';
 import useTheme from '../../hooks/useTheme.js';
 
@@ -65,6 +65,8 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const { theme, toggle: toggleTheme } = useTheme();
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
 
   // Clicking a link activates it AND closes the mobile menu (old
   // navLinkClickHandler removed both `mobile-nav` and `is-active`).
@@ -81,6 +83,25 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
     const root = document.documentElement;
     root.classList.add('scroll-locked');
     return () => root.classList.remove('scroll-locked');
+  }, [mobileOpen]);
+
+  // Close the open menu when tapping outside it — the navbar strip (logo, empty
+  // space) or the theme toggle. The hamburger is excluded so its own click
+  // handler does the toggling (otherwise this would close it and the button
+  // would immediately re-open it). Taps inside the drawer are handled below.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handlePointerDown = (e) => {
+      if (
+        menuRef.current?.contains(e.target) ||
+        toggleRef.current?.contains(e.target)
+      ) {
+        return;
+      }
+      setMobileOpen(false);
+    };
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => document.removeEventListener('pointerdown', handlePointerDown);
   }, [mobileOpen]);
 
   // Scroll-spy: highlight the nav link for whichever section is in the middle of
@@ -121,6 +142,7 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
           Samir Watts
         </p>
         <button
+          ref={toggleRef}
           type="button"
           className={`menu-toggle${mobileOpen ? ' is-active' : ''}`}
           id="mobile-menu"
@@ -134,8 +156,15 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
           <span className="bar"></span>
         </button>
         <ul
+          ref={menuRef}
           id="primary-navigation"
           className={`nav${mobileOpen ? ' mobile-nav' : ''}`}
+          // Tapping the drawer's empty background (or an <li> gap) closes it;
+          // taps on a link fall through to the link's own handler, which
+          // navigates and closes. Only meaningful in the mobile drawer.
+          onClick={(e) => {
+            if (!e.target.closest('a')) setMobileOpen(false);
+          }}
         >
           {links.map((link, i) => (
             <li key={link.label} className="nav-item fw-bolder fs-md-12 ls-1-6">
