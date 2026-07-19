@@ -19,7 +19,7 @@ same markup can be served by a PHP host (`include_once("index.html")`).
 | File | Responsibility |
 |------|----------------|
 | `index.html` | All markup — 5 sections: Home/Nav, About, Experience, Work, Contact |
-| `css/style.css` | Layout primitives, colors, backgrounds, overlay |
+| `css/style.css` | Layout primitives, colours, backgrounds, overlay |
 | `css/typography.css` | Font-size / weight / spacing utility classes (`fs-30`, `fw-900`, …) |
 | `css/navbarStyle.css` | Navbar, gradient progress bar, hamburger, sticky states |
 | `css/aboutStyle.css` | Skills grid + animated progress bars |
