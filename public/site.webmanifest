@@ -1,0 +1,30 @@
+{
+  "name": "Sameer Watts — Senior Software Engineer",
+  "short_name": "Sameer Watts",
+  "description": "Portfolio of Sameer (Samir) Watts, a Senior Software Engineer with 8+ years building web applications and dashboards using React, JavaScript, and modern frontend tools.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#337ab7",
+  "icons": [
+    {
+      "src": "/icons/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
