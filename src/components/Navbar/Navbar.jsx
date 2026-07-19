@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GradientBar from './GradientBar.jsx';
 
 const links = [
@@ -22,6 +22,16 @@ export default function Navbar({ sticky, showLogo, navWrapperRef }) {
     setActiveIndex(i);
     setMobileOpen(false);
   };
+
+  // Lock page scroll while the mobile menu is open so the page can't scroll
+  // behind the full-screen menu. Same approach as the work popups, reusing the
+  // shared `.scroll-locked` class from style.css.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const root = document.documentElement;
+    root.classList.add('scroll-locked');
+    return () => root.classList.remove('scroll-locked');
+  }, [mobileOpen]);
 
   return (
     <div
