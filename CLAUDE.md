@@ -270,3 +270,35 @@ npm run deploy     # (if using gh-pages) publish dist/ to GitHub Pages
 
 Until the migration lands, the site is plain static files — just open
 `index.html` in a browser; there is nothing to build.
+
+---
+
+## 6. Git & branching workflow
+
+**One branch per change.** Never commit directly to `master`, and never keep
+reusing a single long-lived branch for unrelated work. For every new piece of
+work, cut a **fresh branch from the latest `master`**, do the work there, open a
+pull request into `master`, and merge it. The next change starts from `master`
+again with a new branch.
+
+**Branch naming** — pick the prefix that matches the work:
+
+| Prefix | Use for | Example |
+|--------|---------|---------|
+| `feat/` | new feature work | `feat/dark-mode-toggle` |
+| `bugfix/` | fixing a bug | `bugfix/mobile-menu-overlap` |
+| `refactor/` | restructuring with no behaviour change | `refactor/css-breakpoints` |
+| `chore/` | tooling, deps, config | `chore/bump-dependencies` |
+| `docs/` | documentation only | `docs/branching-workflow` |
+
+Keep the name short, lowercase, and hyphenated (`prefix/short-description`).
+
+```bash
+git fetch origin master              # get the latest master
+git checkout -B feat/my-change origin/master   # branch fresh from it
+# ...work, commit...
+git push -u origin feat/my-change    # push and open a PR into master
+```
+
+Because each branch is created fresh from `master`, keeping several PRs open at
+once never clobbers one another — every branch is independent.
