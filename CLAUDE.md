@@ -302,3 +302,47 @@ git push -u origin feat/my-change    # push and open a PR into master
 
 Because each branch is created fresh from `master`, keeping several PRs open at
 once never clobbers one another — every branch is independent.
+
+---
+
+## 7. Verifying visual changes with Playwright
+
+**After opening a PR that changes anything visual, verify it in a real browser —
+don't rely on eyeballing the code or asking the reviewer to check.** This
+environment ships a headless Chromium, so the built site can be driven and
+screenshotted directly, and the screenshots reviewed.
+
+Run this for every PR that touches layout, CSS, components, or interactions
+(clicks, hover, dialogs, dark mode, mobile vs desktop). Pure non-visual PRs
+(docs, config, data-only copy) don't need it.
+
+### Steps
+
+```bash
+npm install --no-save playwright   # browser is pre-installed; download skipped
+npm run build                      # build the site
+npm run preview -- --port 4173 &   # serve dist/ (wait until it responds)
+```
+
+Then run a Playwright script **from inside the project directory** (so Node can
+resolve `playwright` from `node_modules`) that loads `http://localhost:4173/`,
+and for each relevant state captures a screenshot to review:
+
+- **desktop** (e.g. 1280×900) and **mobile** (e.g. 390×844, `isMobile: true`),
+- **light and dark** themes — set dark before load with
+  `page.addInitScript(() => localStorage.setItem('theme', 'dark'))`,
+- **interactions** — click a trigger and assert the result (e.g. the work
+  dialog: `await expect(page.locator('.work-detail.show')).toBeVisible()`).
+
+Launch Chromium with the pre-installed binary:
+`chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' })`
+(match the folder actually present under `/opt/pw-browsers`). Review each PNG,
+fix anything that looks wrong, and re-run until it's right.
+
+### Limits (still need a real device / live site)
+
+- **iOS-only quirks** — the input-zoom-under-16px behaviour and the
+  `100vh`/`100dvh` address-bar difference only reproduce on real iOS Safari.
+- **External images** — the sandbox proxy blocks non-local hosts, so any
+  hotlinked image (only Albertsons today) will look broken in a screenshot even
+  when it's fine on the live site. Host logos locally to avoid this ambiguity.
