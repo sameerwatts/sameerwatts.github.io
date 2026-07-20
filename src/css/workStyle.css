@@ -152,15 +152,23 @@
 }
 .work-img-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  grid-gap: 10px;
+  gap: 8px;
 }
-.work-img-container img {
+/* Unlabelled tiles: the logo fills the card width. */
+.work-img-container > img {
   width: 100%;
 }
-.work-img-container.D2DImg img {
+.work-img-container.D2DImg > img {
   width: 50%;
+}
+/* Labelled tiles (brand icon + wordmark): stack the icon above the label and
+   keep it a fixed, legible size — the old flex row squeezed it down to a dot. */
+.work-img-container > div:first-child img {
+  width: auto;
+  height: 40px;
 }
 
 @media only screen and (min-width: 768px) {
