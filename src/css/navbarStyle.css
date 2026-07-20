@@ -198,7 +198,11 @@
     top: 100px;
     background-color: var(--surface);
     width: 100%;
+    /* 100vh ignores the mobile browser's address bar, leaving the open menu the
+       wrong height. dvh (dynamic viewport height) accounts for it; the vh line
+       stays as a fallback for browsers without dvh support. */
     height: calc(100vh - 55px);
+    height: calc(100dvh - 55px);
     transform: translate(-101%);
     text-align: center;
     overflow: hidden;

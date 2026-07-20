@@ -40,7 +40,9 @@
 .contact-field textarea {
   width: 100%;
   padding: 10px 12px;
-  font-size: 0.9375rem;
+  /* 1rem (16px) minimum: iOS Safari auto-zooms the page when a focused input
+     has a font smaller than 16px, which is jarring on mobile. */
+  font-size: 1rem;
   color: var(--text);
   background-color: var(--surface);
   border: 1px solid var(--border);
