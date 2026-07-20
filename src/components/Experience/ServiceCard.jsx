@@ -1,6 +1,5 @@
 // One experience/company card. Uses a logo image, or an <i> icon when the
-// company has no image (Freelancing). `white` adds the light-text class; some
-// cards render a trailing `content-wrapper-link` anchor.
+// company has no image (Freelancing). `white` adds the light-text class.
 export default function ServiceCard({
   name,
   serviceClass,
@@ -10,7 +9,6 @@ export default function ServiceCard({
   alt,
   blurb,
   white,
-  hasLink,
 }) {
   const logoClassName = ['company-logo', logoClass, 'mb-20']
     .filter(Boolean)
@@ -34,7 +32,6 @@ export default function ServiceCard({
         </h2>
         <p className={white ? 'white' : ''}>{blurb}</p>
       </div>
-      {hasLink && <a className="content-wrapper-link" href="#"></a>}
     </div>
   );
 }
