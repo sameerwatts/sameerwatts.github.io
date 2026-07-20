@@ -20,6 +20,8 @@ npm install       # install dependencies
 npm run dev       # start the dev server with hot reload
 npm run build     # production build -> dist/
 npm run preview   # serve the production build locally
+npm test          # run the component/unit tests (Vitest)
+npm run test:watch # re-run tests on change
 ```
 
 ## Project structure
@@ -42,5 +44,5 @@ Every push to `master` triggers `.github/workflows/deploy.yml`, which builds
 the site and publishes it to GitHub Pages. The custom domain is configured via
 `public/CNAME`.
 
-Every pull request into `master` runs `.github/workflows/ci.yml`, which builds
-the site to catch breakage before merge.
+Every pull request into `master` runs `.github/workflows/ci.yml`, which runs
+the tests and builds the site to catch breakage before merge.
