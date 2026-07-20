@@ -28,16 +28,22 @@
   transform: translate(0px, 0px);
   transition: all 0.3s ease-in-out;
 }
-.service:hover .service-info,
-.service:hover .service-element {
-  transform: translate(0px, -30px);
-}
 .service .service-element {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
-.service:hover .service-element {
-  opacity: 0;
+/* Lift the text and fade the logo on hover — but only on devices with a real
+   hovering pointer (mouse/trackpad). On touch screens :hover sticks after a tap,
+   so the effect got "stuck" on the tapped card, which was confusing. Gating it
+   behind hover: hover means tapping a card on mobile does nothing visual. */
+@media (hover: hover) {
+  .service:hover .service-info,
+  .service:hover .service-element {
+    transform: translate(0px, -30px);
+  }
+  .service:hover .service-element {
+    opacity: 0;
+  }
 }
 .service-icon {
   display: block;
