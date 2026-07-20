@@ -170,6 +170,20 @@
   width: auto;
   height: 40px;
 }
+/* Dark theme: sit every logo on a white chip so dark logos (Nickelfox,
+   aptihealth, PoweredX) stay legible on the dark cards, and the logo grid stays
+   uniform. Light mode is untouched — the card is already white. The label sits
+   outside the chip, so its (light) dark-mode text stays readable. */
+:root[data-theme='dark'] .work-img-container > img {
+  background: var(--logo-chip);
+  padding: 10px;
+  border-radius: 8px;
+}
+:root[data-theme='dark'] .work-img-container > div:first-child {
+  background: var(--logo-chip);
+  padding: 8px;
+  border-radius: 8px;
+}
 
 @media only screen and (min-width: 768px) {
   .vertical-separator {
